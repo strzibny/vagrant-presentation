@@ -48,10 +48,21 @@
 					</p>
 				</section>
 
+				<section>
+					<h1>Using Vagrant</h1>
+					<p>from a developer perspective</p>
+					<pre><code data-trim contenteditable>
+$ vagrant up # starting Vagrant from a Vagrantfile
+$ vagrant rsync-auto
+$ vagrant ssh
+					</code></pre>
+
+				</section>
+
 				<!-- Vertical slides -->
 				<section>
 					<section>
-						<h2>Creating Vagrant box</h2>
+						<h2>Creating a Vagrant box</h2>
 						<p>from scratch</p>
 						<br>
 						<ul>
@@ -116,22 +127,38 @@ $ cat metadata.json
 }
 					  </code></pre>
 						<pre><code data-trim contenteditable>
-tar cvzf vagrant-fedora-21-server.box ./metadata.json vagrant-fedora-21-server.qcow2
+$ tar cvzf vagrant-fedora-21-server.box ./metadata.json vagrant-fedora-21-server.qcow2
 						</code></pre>
-					</section>
-					<section>
-						<h2></h2>
-						<p></p>
-						<br>
-
 					</section>
 				</section>
 
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
+					<section>
+						<h2>Creating a Vagrant box</h2>
+						<p>in a sane way</p>
+						<pre><code data-trim contenteditable>
+$ gem install veewee
+$ veewee kvm templates # list available templates for KVM
+$ veewee kvm define centos7-x86_64 'CentOS-7.0-1406-x86_64-netinstall' -f
+$ veewee kvm build 'centos7-x86_64' --workdir=/home/strzibny
+						</code></pre>
+				</section>
+					<section>
+						<p>Box already comes with <strong>Puppet</strong> and <strong>Chef</strong></p>
+						<pre><code data-trim contenteditable>
+$ ls veewee/templates/CentOS-7.0-1406-x86_64-netinstall/
+base.sh
+chef.sh
+cleanup.sh
+definition.rb
+ks.cfg
+puppet.sh
+vagrant.sh
+virtualbox.sh
+vmfusion.sh
+zerodisk.sh
+					  </code></pre>
+					</section>
 				</section>
 
 				<section>
