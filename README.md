@@ -84,6 +84,28 @@ Vagrantfile.
 
 #### Packaging VM as Box
 
+
+vagrant-libvirt provider and Fedora 21 server
+
+- *qcow2* image file named **box.img**
+- optional **Vagrantfile** with defaults
+- **metadata.json**
+
+
+```shell
+$ cat metadata.json
+{
+  "provider" : "libvirt",
+  "format" : "qcow2",
+  "virtual_size" : 40
+}
+```
+
+
+```shell
+$ tar cvzf vagrant-fedora-21-server.box ./metadata.json vagrant-fedora-21-server.qcow2
+```
+
 ### In an Automatic Fashion
 
 ```shell
