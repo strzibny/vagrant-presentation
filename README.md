@@ -10,9 +10,11 @@ plugin on Fedora and derivates. A lot of the information is general
 though.*
 
 
-## Creating a Vagrant box
+## Creating a Vagrant Box
 
 ### From Scratch
+
+#### Preparing the Image
 
 To create a desired image for your Vagrant box you need to ensure that
 **vagrant** user with sudo rights and without password protection exists.
@@ -21,7 +23,7 @@ Vagrant will use this *vagrant* user to access your virtual machine via
 SSH which means that SSH has to be present in the virtual machine and
 properly set up.
 
-To do so on CentOS 6, one has to install openssh-server package, start
+To do so on CentOS 6, one has to install *openssh-server* package, start
 and enable the service first:
 
 ```shell
@@ -73,7 +75,40 @@ Defaults env_keep += "SSH_AUTH_SOCK"
 ```
 
 A good practice is also setting up **root** user with password "vagrant",
-although it is not necessary for Vagrant to work.
+although it is not necessary for Vagrant to work. Finally you can add
+anything you like to the VM. If you would like to do provision with
+Chef or Puppet for example, you would need to install them at this time.
+But if you would like to have installed Ruby, you can decide whether to
+include Ruby in the VM itself or include the installation later in the
+Vagrantfile.
+
+#### Packaging VM as Box
+
+### In an Automatic Fashion
+
+```shell
+$ gem install veewee
+$ veewee kvm templates # list available templates for KVM
+$ veewee kvm define centos7-x86_64 'CentOS-7.0-1406-x86_64-netinstall' -f
+$ veewee kvm build 'centos7-x86_64' --workdir=/home/strzibny
+```
+
+Box already comes with <strong>Puppet</strong> and <strong>Chef</strong>.
+
+
+```shell
+$ ls veewee/templates/CentOS-7.0-1406-x86_64-netinstall/
+base.sh
+chef.sh
+cleanup.sh
+definition.rb
+ks.cfg
+puppet.sh
+vagrant.sh
+virtualbox.sh
+vmfusion.sh
+zerodisk.sh
+```
 
 
 - how to use Vagrant as a developer
