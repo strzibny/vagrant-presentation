@@ -22,6 +22,47 @@ We are part of Red Hat Developer Experience team. Josef does mostly
 Ruby and RubyGems packaging for Fedora and RHEL, and started to
 maintain Vagrant in Fedora.
 
+## Vagrant world
+
+Vagrant is built around hosts, guests, providers and provisioners. Images are distributed in a provider-specific *.box* files
+and project's configuration is saved within *Vagrantfile*.
+
+### Definitions
+
+#### Host
+
+- Host operating system, its detection and capabilities (Windows, RHEL)
+
+Many included by defaults, others by plugins.
+
+#### Guest
+
+- Guest operating system, its detection and capabilities (Ubuntu, OpenBSD, Fedora), **virtualized environment**
+
+Many included by defaults, others by plugins.
+
+#### Provider
+
+- Mean of virtualisation, type of virtual machines used (**VirtualBox**, libvirt)
+
+VirtualBox is upstream default. *libvirt* and others are available via plugins.
+
+#### Provisioner
+
+- Configuration management system to set up (provision) your machine (**Shell, Chef, Puppet**)
+
+Shell, Chef and Puppet are included in Vagrant by default.
+
+#### Vagrant box
+
+- Package format including **provider-specific** image plus metadata
+
+#### Vagrantfile
+
+- Definition of configuration and provisioning for a project **on top of a given box**
+
+
+
 ## Creating a Vagrant Box
 
 ### From Scratch

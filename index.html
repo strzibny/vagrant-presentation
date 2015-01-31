@@ -45,14 +45,14 @@
 					<h2>for Fedora</h2>
 				</section>
 
-				<section data-background="white" data-background-transition="zoom">
+				<section data-background="white" data-background-transition="slide">
 					<div style="float:left;margin-left:3%;"><small>by</small></div>
 
 					<div style="float:left;margin-left:5%;margin-right:2%;width:40%;background:url(img/strzibny.jpg) no-repeat;height:400px">
-						<div style="margin-top:280px;"><span style="background:white;opacity: 0.9;">Josef Stříbný<br>@strzibny</span></div>
+						<div style="margin-top:302px;background:white;opacity: 0.9;"><span style="background:white;opacity: 0.9;">Josef Stříbný<br>@strzibny</span></div>
 					</div>
 					<div style="float:left;width:40%;background:url(img/humaton.jpg) no-repeat;height:400px">
-						<div style="margin-top:280px;"><span style="background:white;opacity: 0.9;">Tomáš Hrčka<br>@humaton</span></div>
+						<div style="margin-top:302px;background:white;opacity: 0.9;"><span style="background:white;opacity: 0.9;">Tomáš Hrčka<br>@humaton</span></div>
 					</div>
 					<div style="clear:both; color: #333333;margin-left:10%;margin-right:10%;">
 						<img style="border:0;padding-top:0px;float:left;padding-left:0%;" src="img/redhat.jpg" />
@@ -60,17 +60,89 @@
 					</div>
 				</section>
 
+				<section data-background="white" data-background-transition="slide">
+					<h3>Agenda</h3>
+					<ul>
+						<li>The Goal &and; Vagrant
+						<li>Definitions
+						<li>Using Vagrant as a developer
+						<li>Creating Vagrant box from scratch and automatically
+						<li>Vagrant in Fedora
+						<li>Demo
+					</ul>
+				</section>
+
 				<section>
-				<h3>Lightweight, reproducible, and portable development environments</h3>
+					<h3>The Goal</h3>
+					<h2 style="color:#411894">Isolated, reproducible, and portable development environments</h2>
 			  </section>
+
+				<section data-background="white" data-background-transition="slide">
+					<img style="border: 0;" src="img/vagrant_box.png" />
+					<h2>How can Vagrant help?</h2>
+				</section>
+
+				<section data-background="white" data-background-transition="slide">
+					<img style="border: 0;" src="img/vagrant_box.png" width="200" />
+					<img style="border: 0;" src="img/vagrant_box.png" width="200" />
+					<img style="border: 0;" src="img/vagrant_box.png" width="200" />
+					<h3>Isolation, Reproducibility, Portability</h3>
+					<p style="color:#411894">+</p>
+					<h3 style="color:#411894">Ease of Use, Convention, Extensibility</h3>
+				</section>
+
+				<section>
+					<h3>Hosts, guests, providers, provisioners</h3>
+					<img src="img/vagrant.png" height=200 style="border:0;background:none;box-shadow:0">
+					<h3>Boxes, Vagrantfiles</h3>
+				</section>
+
+				<section>
+					<h4 style="color:#411894">Host</h4>
+					<ul>
+						<li>Host operating system, its detection and capabilities (Windows, RHEL)</li>
+					</ul>
+					<h4 style="color:#411894">Guest</h4>
+					<ul>
+						<li>Guest operating system, its detection and capabilities (Ubuntu, OpenBSD, Fedora), <strong>virtualized environment</strong></li>
+					</ul>
+				</section>
+
+				<section>
+					<h4 style="color:#411894">Provider</h4>
+					<ul>
+						<li>Mean of virtualisation, type of virtual machines used (<strong>VirtualBox</strong>, libvirt)</li>
+					</ul>
+					<h4 style="color:#411894">Provisioner</h4>
+					<ul>
+						<li>Configuration management system to set up (provision) your machine (<strong>Shell, Chef, Puppet</strong>)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h4 style="color:#411894">Vagrant box</h4>
+					<ul>
+						<li>Package format including <strong>provider-specific</strong> image plus metadata</li>
+					</ul>
+					<h4 style="color:#411894">Vagrantfile</h4>
+					<ul>
+						<li>Definition of configuration and provisioning for a project <strong>on top of a given box</strong></li>
+					</ul>
+				</section>
 
 				<section>
 					<h1>Using Vagrant</h1>
 					<p>from a developer perspective</p>
 					<pre><code data-trim contenteditable>
+$ ls ~/project
+... ... ... Vagrantfile
 $ vagrant up # starting Vagrant from a Vagrantfile
 $ vagrant rsync-auto
 $ vagrant ssh
+					</code></pre>
+					<pre><code data-trim contenteditable>
+$ vagrant halt
+$ vagrant destroy
 					</code></pre>
 
 				</section>
@@ -79,8 +151,6 @@ $ vagrant ssh
 				<section>
 					<section>
 						<h2>Creating a Vagrant box</h2>
-						<p>from scratch</p>
-						<br>
 						<ul>
 							<li>Creating desired image
 								<ul>
@@ -92,6 +162,12 @@ $ vagrant ssh
 							  </ul>
 							<li>Packaging image as <em>.box</em>
 						</ul>
+					</section>
+					<section>
+						<p style="color:#411894">Box depends on provider, operating system and provisioner.</p>
+						<img style="border: 0;float:left;" src="img/libvirt.png" width="auto">
+						<img style="border: 0;float:left;padding-left:30px;" src="img/fedora.png" width="300">
+						<img style="border: 0;float:left;padding-left:30px;" src="img/puppet.png" width="300">
 					</section>
 					<section>
 						<h2>SSH installed and running</h2>
@@ -178,13 +254,28 @@ zerodisk.sh
 				</section>
 
 				<section>
-					<h2>Point of View</h2>
+					<h1>Vagrant in Fedora</h1>
 					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
+						<strong>vagrant</strong> and <strong>vagrant-libvirt</strong> for Fedora 22
 					</p>
+					<img src="img/libvirt.png" width="auto">
+					<pre><code data-trim contenteditable>
+# dnf install vagrant
+# dnf install vagrant-libvirt
+					</code></pre>
+					<p>+ possible <strong>@vagrant</strong> group</p>
+				</section>
+
+				<section>
+					<h1>Vagrant from Copr</h1>
 					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+						<strong>vagrant</strong> and <strong>vagrant-libvirt</strong> for Fedora 20, Fedora 21, RHEL
 					</p>
+					<ul>
+						<li><a href="http://copr.fedoraproject.org/coprs/jstribny/vagrant-f20/">http://copr.fedoraproject.org/coprs/jstribny/vagrant-f20</a>
+						<li><a href="http://copr.fedoraproject.org/coprs/jstribny/vagrant-f21/">http://copr.fedoraproject.org/coprs/jstribny/vagrant-f21</a>
+						<li><a href="http://copr.fedoraproject.org/coprs/jstribny/vagrant1">http://copr.fedoraproject.org/coprs/jstribny/vagrant1</a>
+					</ul>
 				</section>
 
 				<section>
