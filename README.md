@@ -207,9 +207,9 @@ plugins.
 Following Copr repositories were created to install Vagrant on Fedora 20, 21 and as a software
 collection on RHEL.
 
-[jstribny/vagrant-f20](http://copr.fedoraproject.org/coprs/jstribny/vagrant-f20)
-[jstribny/vagrant-f21](http://copr.fedoraproject.org/coprs/jstribny/vagrant-f21)
-[jstribny/vagrant1 software collection](http://copr.fedoraproject.org/coprs/jstribny/vagrant1)
+- [jstribny/vagrant-f20](http://copr.fedoraproject.org/coprs/jstribny/vagrant-f20)
+- [jstribny/vagrant-f21](http://copr.fedoraproject.org/coprs/jstribny/vagrant-f21)
+- [jstribny/vagrant1](http://copr.fedoraproject.org/coprs/jstribny/vagrant1) software collection
 
 
 - how to use Vagrant as a developer
