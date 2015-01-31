@@ -22,6 +22,14 @@ We are part of Red Hat Developer Experience team. Josef does mostly
 Ruby and RubyGems packaging for Fedora and RHEL, and started to
 maintain Vagrant in Fedora.
 
+## Agenda
+
+- Vagrant components ecosystem
+- Using Vagrant as a developer
+- Creating your own box
+- Vagrant in Fedora
+- Demo
+
 ## Vagrant World
 
 Vagrant is built around hosts, guests, providers and provisioners. Images are distributed in a provider-specific *.box* files
@@ -61,7 +69,29 @@ Shell, Chef and Puppet are included in Vagrant by default.
 
 - Definition of configuration and provisioning for a project **on top of a given box**
 
+## Using Vagrant as a Developer
 
+The simplicity behind Vagrant is that developer can checked out a project repository
+and -- provided it includes Vagrantfile -- just run `vagrant up` to provision the
+machine and to have a shared folder(s) and ports available so the developent would feel
+pretty much like a local one.
+
+With `vagrant rsync-auto` one can keep auto-syncing the shared folders *(if synced via rsync)*
+and with `vagrant ssh` one can access the machine via SSH. Once the work is finished,
+one can halt the machine with `vagrant halt` or destroy it with `vagrant destroy`.
+
+```shell
+$ ls ~/project
+... ... ... Vagrantfile
+$ vagrant up # starting Vagrant from a Vagrantfile
+$ vagrant rsync-auto
+$ vagrant ssh
+```
+
+```shell
+$ vagrant halt
+$ vagrant destroy
+```
 
 ## Creating a Vagrant Box
 
