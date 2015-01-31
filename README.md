@@ -9,6 +9,18 @@ Vagrant with libvirt provider provided by vagrant-libvirt
 plugin on Fedora and derivates. A lot of the information is general
 though.*
 
+## Presenters
+
+- Josef Stříbný
+  - GitHub: [@strzibny](https://www.github.com/strzibny)
+  - Twitter: [@strzibnyj](https://www.twitter.com/strzibnyj)
+  - Blog: [Notes to self](https://nts.strzibny.name)
+- Tomáš Hrčka
+  - GitHub: [@humaton](https://www.github.com/humaton)
+
+We are part of Red Hat Developer Experience team. Josef does mostly
+Ruby and RubyGems packaging for Fedora and RHEL, and started to
+maintain Vagrant in Fedora.
 
 ## Creating a Vagrant Box
 
