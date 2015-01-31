@@ -24,6 +24,7 @@ maintain Vagrant in Fedora.
 
 ## Agenda
 
+- The Goal &and; Vagrant
 - Vagrant components ecosystem
 - Using Vagrant as a developer
 - Creating your own box
@@ -167,13 +168,18 @@ Vagrantfile.
 
 #### Packaging VM as Box
 
+Vagrant boxes are simply said just tarred images. What is important to
+note is that *.box* files are provider specific. Below is an *libvirt*
+example for which you need only the KVM image named as *box.img* and
+*metadata.json* file which specifies the provider.
 
-vagrant-libvirt provider and Fedora 21 server
+*Example:* vagrant-libvirt provider and Fedora 21 server:
 
 - *qcow2* image file named **box.img**
 - optional **Vagrantfile** with defaults
 - **metadata.json**
 
+The contents of the metadata file:
 
 ```shell
 $ cat metadata.json
@@ -184,6 +190,7 @@ $ cat metadata.json
 }
 ```
 
+Once you have that prepared, you can just pack it all together using **tar**:
 
 ```shell
 $ tar cvzf vagrant-fedora-21-server.box ./metadata.json vagrant-fedora-21-server.qcow2
@@ -249,7 +256,8 @@ collection on RHEL.
 
 - [jstribny/vagrant-f20](http://copr.fedoraproject.org/coprs/jstribny/vagrant-f20)
 - [jstribny/vagrant-f21](http://copr.fedoraproject.org/coprs/jstribny/vagrant-f21)
-- [jstribny/vagrant1](http://copr.fedoraproject.org/coprs/jstribny/vagrant1) software collection
+- [jstribny/vagrant1 software collection](http://copr.fedoraproject.org/coprs/jstribny/vagrant1)
+
 
 
 - how to use Vagrant as a developer
