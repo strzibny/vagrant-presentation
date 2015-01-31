@@ -22,7 +22,7 @@ We are part of Red Hat Developer Experience team. Josef does mostly
 Ruby and RubyGems packaging for Fedora and RHEL, and started to
 maintain Vagrant in Fedora.
 
-## Vagrant world
+## Vagrant World
 
 Vagrant is built around hosts, guests, providers and provisioners. Images are distributed in a provider-specific *.box* files
 and project's configuration is saved within *Vagrantfile*.
@@ -186,9 +186,33 @@ zerodisk.sh
 ```
 
 
+## Vagrant in Fedora
+
+### Vagrant in Fedora 22
+
+Vagrant has been submitted as a Fedora 22 feature together with *vagrant-libvirt* plugin.
+As Vagrant is already built for Fedora 22 in the official repositories it is enough to run:
+
+```shell
+# dnf install vagrant-libvirt
+```
+
+to install Vagrant with libvirt support. libvirt is the new default provider in Fedora builds.
+
+We would like to introduce a new **@vagrant** group in Fedora that should install all packaged
+plugins.
+
+### Older Fedoras and RHEL
+
+Following Copr repositories were created to install Vagrant on Fedora 20, 21 and as a software
+collection on RHEL.
+
+[jstribny/vagrant-f20](http://copr.fedoraproject.org/coprs/jstribny/vagrant-f20)
+[jstribny/vagrant-f21](http://copr.fedoraproject.org/coprs/jstribny/vagrant-f21)
+[jstribny/vagrant1 software collection](http://copr.fedoraproject.org/coprs/jstribny/vagrant1)
+
+
 - how to use Vagrant as a developer
-- how to create a custom box from scratch
-- how to create a box easily
 - where to find boxes
-- Vagrant packaging efforts for Fedora
 - demo
+- attributions
