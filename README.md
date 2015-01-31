@@ -73,8 +73,8 @@ Shell, Chef and Puppet are included in Vagrant by default.
 
 The simplicity behind Vagrant is that developer can checked out a project repository
 and -- provided it includes Vagrantfile -- just run `vagrant up` to provision the
-machine and to have a shared folder(s) and ports available so the developent would feel
-pretty much like a local one.
+machine and to have a shared folder(s) of the project's source code and ports available
+so the development would feel pretty much like a local one.
 
 With `vagrant rsync-auto` one can keep auto-syncing the shared folders *(if synced via rsync)*
 and with `vagrant ssh` one can access the machine via SSH. Once the work is finished,
@@ -83,7 +83,7 @@ one can halt the machine with `vagrant halt` or destroy it with `vagrant destroy
 ```shell
 $ ls ~/project
 ... ... ... Vagrantfile
-$ vagrant up # starting Vagrant from a Vagrantfile
+$ vagrant up # start and provision VMs defined in Vagrantfile
 $ vagrant rsync-auto
 $ vagrant ssh
 ```
@@ -191,6 +191,11 @@ $ tar cvzf vagrant-fedora-21-server.box ./metadata.json vagrant-fedora-21-server
 
 ### In an Automatic Fashion
 
+You can use a popular Ruby gem **veewee** to build your Vagrant boxes.
+It provides a lot of templates for various *providers* and *guests*.
+
+Here is how to find and build a CentOS box with *libvirt* provider:
+
 ```shell
 $ gem install veewee
 $ veewee kvm templates # list available templates for KVM
@@ -198,7 +203,8 @@ $ veewee kvm define centos7-x86_64 'CentOS-7.0-1406-x86_64-netinstall' -f
 $ veewee kvm build 'centos7-x86_64' --workdir=/home/strzibny
 ```
 
-Box already comes with <strong>Puppet</strong> and <strong>Chef</strong>.
+That box already comes with <strong>Puppet</strong> and <strong>Chef</strong>
+preinstalled as you can see for yourself by examing the template:
 
 
 ```shell
@@ -214,6 +220,10 @@ virtualbox.sh
 vmfusion.sh
 zerodisk.sh
 ```
+
+Template is just a collection of shell scripts that are run on the base VM
+to set it up for use as Vagrant box. `definition.rb` is an internal veewee
+definition for the box to be set up.
 
 
 ## Vagrant in Fedora
