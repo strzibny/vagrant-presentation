@@ -28,6 +28,7 @@ maintain Vagrant in Fedora.
 - Vagrant components ecosystem
 - Using Vagrant as a developer
 - Creating your own box
+- Finding Vagrant boxes
 - Vagrant in Fedora
 - Demo
 
@@ -231,6 +232,28 @@ zerodisk.sh
 Template is just a collection of shell scripts that are run on the base VM
 to set it up for use as Vagrant box. `definition.rb` is an internal veewee
 definition for the box to be set up.
+
+## Finding Vagrant boxes
+
+Originally there was an official Vagrant Cloud *(vagrantcloud.com)* service that is being merged
+into a new service called Atlas *(atlas.hashicorp.com)*.
+
+With Atlas it's enough to:
+
+```shell
+vagrant up chef/centos-6.5 --provider virtualbox
+```
+and the corresponding box will be downloaded from HashiCorp servers.
+
+A good unofficial alternative is *http://www.vagrantbox.es/*. You can
+add boxes from a given URL:
+
+```shell
+$ vagrant box add {title} {url}
+$ vagrant init {title}
+$ vagrant up
+```
+or add them with `vagrant box add` command.
 
 
 ## Vagrant in Fedora

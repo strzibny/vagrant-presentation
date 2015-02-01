@@ -67,6 +67,7 @@
 						<li>Vagrant components ecosystem
 						<li>Using Vagrant as a developer
 						<li>Creating your own box
+						<li>Finding Vagrant boxes
 						<li>Vagrant in Fedora
 						<li>Demo
 					</ul>
@@ -254,6 +255,25 @@ zerodisk.sh
 				</section>
 
 				<section>
+					<h2>Finding Vagrant Boxes</h2>
+					<ul><li>On Atlas (atlas.hashicorp.com), former Vagrant Cloud (vagrantcloud.com):</li>
+					<pre><code data-trim contenteditable>
+$ vagrant up chef/centos-6.5 --provider virtualbox
+					</code></pre>
+
+					<li>http://www.vagrantbox.es/ as unofficial alternative</li>
+					<pre><code data-trim contenteditable>
+$ vagrant box add {title} {url}
+$ vagrant init {title} # Creates default Vagrantfile
+$ vagrant up
+					</code></pre>
+					<pre><code data-trim contenteditable>
+$ vagrant box add name.box --name mybox
+					</code></pre>
+					</ul>
+				</section>
+
+				<section>
 					<h1>Vagrant in Fedora</h1>
 					<p>
 						<strong>vagrant</strong> and <strong>vagrant-libvirt</strong> for Fedora 22
@@ -278,67 +298,9 @@ zerodisk.sh
 					</ul>
 				</section>
 
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
 
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
 
 				<section>
 					<section data-background="#dddddd">
