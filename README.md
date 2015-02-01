@@ -233,7 +233,7 @@ Template is just a collection of shell scripts that are run on the base VM
 to set it up for use as Vagrant box. `definition.rb` is an internal veewee
 definition for the box to be set up.
 
-## Finding Vagrant boxes
+## Finding Vagrant Boxes
 
 Originally there was an official Vagrant Cloud *(vagrantcloud.com)* service that is being merged
 into a new service called Atlas *(atlas.hashicorp.com)*.
@@ -281,9 +281,9 @@ collection on RHEL.
 - [jstribny/vagrant-f21](http://copr.fedoraproject.org/coprs/jstribny/vagrant-f21)
 - [jstribny/vagrant1 software collection](http://copr.fedoraproject.org/coprs/jstribny/vagrant1)
 
+## Attributions
 
-
-- how to use Vagrant as a developer
-- where to find boxes
-- demo
-- attributions
+- This presentation @ Josef Stříbný
+- Vagrant logos and artwork @ HashiCorp
+- Fedora, libvirt logos @ Red Hat, Inc.
+- Puppet logo @ Puppet Labs
