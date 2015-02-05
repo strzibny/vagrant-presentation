@@ -54,13 +54,13 @@ and project's configuration is saved within *Vagrantfile*.
 
 #### Host
 
-- Host operating system, its detection and capabilities (Windows, RHEL)
+- Host operating system (Windows, RHEL), its detection and capabilities (NFS)
 
 Many included by defaults, others by plugins.
 
 #### Guest
 
-- Guest operating system, its detection and capabilities (Ubuntu, OpenBSD, Fedora), **virtualized environment**
+- Guest operating system (Ubuntu, OpenBSD, Fedora), its detection and capabilities (halt, insert public key), **virtualized environment**
 
 Many included by defaults, others by plugins.
 
@@ -203,6 +203,8 @@ $ cat metadata.json
   "virtual_size" : 40
 }
 ```
+
+Virtual size has to be set for allocating space in storage pool (in GB).
 
 Once you have that prepared, you can just pack it all together using **tar**:
 
