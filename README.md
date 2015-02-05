@@ -36,6 +36,15 @@ into Fedora and are co-authors of *vagrant-registration* plugin.
 - Vagrant in Fedora
 - Demo
 
+## The Goal
+
+The goal is to have isolated, distributable and portable development environments.
+
+- Isolated so your project's setup does not mess up with your workstation or other projects
+- Distributable so new member of your team can just clone your project with Vagrantfile and
+get the project running easily by reusing the configuration
+- Portable so you can run your project's development environment on Linux, Windows or Mac OS
+
 ## Vagrant World
 
 Vagrant is built around hosts, guests, providers and provisioners. Images are distributed in a provider-specific *.box* files
@@ -57,7 +66,7 @@ Many included by defaults, others by plugins.
 
 #### Provider
 
-- Mean of virtualisation, type of virtual machines used (**VirtualBox**, libvirt, docker)
+- Provider of virtual machines or containers used (**VirtualBox**, libvirt, docker)
 
 VirtualBox is upstream default. *libvirt* and others are available via plugins.
 
