@@ -66,9 +66,10 @@ Many included by defaults, others by plugins.
 
 #### Provider
 
-- Provider of virtual machines or containers used (**VirtualBox**, libvirt, docker)
+- Provider of virtual machines or containers used (**VirtualBox**, libvirt, **docker**)
 
-VirtualBox is upstream default. *libvirt* and others are available via plugins.
+VirtualBox is upstream default and docker support is also included by default.
+*libvirt* and others are available via plugins.
 
 #### Provisioner
 
