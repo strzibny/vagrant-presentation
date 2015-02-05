@@ -4,6 +4,9 @@ This is the accompanying text to the Vagrant presentation available
 in this repository with comprehensive and structured information
 featured on the slides.
 
+Vagrant *(http://vagrantup.com)* is a program for setting up reproducible
+and portable development environments easily with a large community.
+
 *Note: This presentation and text talks primarily about using
 Vagrant with libvirt provider provided by vagrant-libvirt
 plugin on Fedora and derivates. A lot of the information is general
@@ -20,7 +23,8 @@ though.*
 
 We are part of Red Hat Developer Experience team. Josef does mostly
 Ruby and RubyGems packaging for Fedora and RHEL, and started to
-maintain Vagrant in Fedora.
+maintain Vagrant in Fedora. We were both involved in getting Vagrant
+into Fedora and are co-authors of *vagrant-registration* plugin.
 
 ## Agenda
 
@@ -53,13 +57,13 @@ Many included by defaults, others by plugins.
 
 #### Provider
 
-- Mean of virtualisation, type of virtual machines used (**VirtualBox**, libvirt)
+- Mean of virtualisation, type of virtual machines used (**VirtualBox**, libvirt, docker)
 
 VirtualBox is upstream default. *libvirt* and others are available via plugins.
 
 #### Provisioner
 
-- Configuration management system to set up (provision) your machine (**Shell, Chef, Puppet**)
+- Configuration management system to set up (provision) your machine (**Shell, Chef, Puppet**, Ansible)
 
 Shell, Chef and Puppet are included in Vagrant by default.
 
@@ -281,9 +285,22 @@ collection on RHEL.
 - [jstribny/vagrant-f21](http://copr.fedoraproject.org/coprs/jstribny/vagrant-f21)
 - [jstribny/vagrant1 software collection](http://copr.fedoraproject.org/coprs/jstribny/vagrant1)
 
+## Official RPM
+
+It is also possible to run the official RPM from *https://www.vagrantup.com/downloads.html* which
+comes with VirtualBox provider as a default. You will still need to install download and install
+VirtualBox yourself.
+
+If you would like to use *libvirt* provider with the upstream package, you need to install
+*vagrant-libvirt* plugin with:
+
+```shell
+vagrant plugin install vagrant-libvirt
+```
+
 ## Attributions
 
-- This presentation @ Josef Stříbný
+- This presentation @ Josef Stříbný, Tomáš Hrčka
 - Vagrant logos and artwork @ HashiCorp
 - Fedora, libvirt logos @ Red Hat, Inc.
 - Puppet logo @ Puppet Labs
