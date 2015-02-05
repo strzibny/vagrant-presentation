@@ -297,7 +297,7 @@ collection on RHEL.
 ## Official RPM
 
 It is also possible to run the official RPM from *https://www.vagrantup.com/downloads.html* which
-comes with VirtualBox provider as a default. You will still need to install download and install
+comes with VirtualBox provider as a default. You will still need to download and install
 VirtualBox yourself.
 
 If you would like to use *libvirt* provider with the upstream package, you need to install
