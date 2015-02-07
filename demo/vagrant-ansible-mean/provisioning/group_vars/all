@@ -1,0 +1,7 @@
+---
+src_root: /home/{{ansible_user_id}}/src
+nginx_hostname: vagrant-devconf-demo
+node_port: 3000
+web_project_name: web
+express_project_name: api
+express_base_route: api/
