@@ -309,6 +309,20 @@ If you would like to use *libvirt* provider with the upstream package, you need 
 ```shell
 vagrant plugin install vagrant-libvirt
 ```
+## Vagrant files in detail
+Vagrant files:
+```shell
+git clone git@github.com:strzibny/vagrant-presentation.git 
+```
+Unofficial Fedora Cloud box:
+https://atlas.hashicorp.com/humaton/boxes/fedora-21-cloud
+
+```shell
+vagrant box add humaton/fedora-21-cloud
+vagrant up humaton/fedora-21-cloud --provider libvirt
+vagrant ssh
+```
+
 
 ## Attributions
 

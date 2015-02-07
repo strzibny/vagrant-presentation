@@ -11,8 +11,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
  
  config.vm.provision "shell", inline: "yum install fedora-release-server"
  config.vm.provision "shell", inline: "yum update -y"
- config.vm.provision "shell", inline: "yum install -y vagrant vagrant-libvirt vagrant-lxc--enablerepo=updates-testing"
- config.vm.provision "shell", inline: "yum install -y docker ruby-devel"
+ config.vm.provision "shell", inline: "yum install -y vagrant vagrant-libvirt vagrant-lxc --enablerepo=updates-testing"
+ config.vm.provision "shell", inline: "yum install -y docker ruby-devel nodejs npm"
  
  config.vm.provision "shell", inline: "systemctl enable cockpit"
  config.vm.provision "shell", inline: "systemctl start cockpit"
