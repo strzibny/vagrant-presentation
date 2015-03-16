@@ -272,9 +272,82 @@ $ vagrant up
 or add them with `vagrant box add` command.
 
 
+## Getting started using vagrant-libvirt
+
+Let's get a box first and add it:
+
+```
+wget http://file.rdu.redhat.com/~jshubin/vagrant/fedora-21/fedora-21.box
+vagrant box add fedora21 fedora-21.box
+```
+
+or:
+
+```
+vagrant box add rhel6 http://file.rdu.redhat.com/~jshubin/vagrant/rhel-6.5/rhel-6.5.box
+```
+
+Either action will add boxes in `.vagrant.d/boxes`:
+
+```
+$ ls .vagrant.d/boxes
+fedora21/ rhel6/
+```
+
+To check:
+
+```
+$ vagrant box list
+fedora21 (libvirt, 0)
+rhel6    (libvirt, 0)
+```
+
+And to create Vagrantfile:
+```
+$ vagrant init fedora21
+```
+
+fedora21 either exists in `.vagrant.d/boxes` or `box_url` option is stated in Vagrant file:
+
+```
+config.vm.box = "fedora21"
+config.vm.box_url = "http://file.rdu.redhat.com/~jshubin/vagrant/fedora-21/fedora-21.box"
+```
+
+### $ vagrant up
+
+```
+$ vagrant up
+
+==> default: Uploading base box image as volume into libvirt storage...
+==> default: Creating image (snapshot of base box volume).
+
+$ sudo ls /var/lib/libvirt/images
+fedora21_vagrant_box_image.img
+
+
+==> default: Creating domain with the following settings...
+..
+==> default:  -- Image:             /var/lib/libvirt/images/user_default.img
+```
+
+`user` is the current directory (/home/user) and `default` in the name of libvirt pool,
+`.img` file is renamed image from the `.box` file.
+
+```
+==> default: Starting domain.
+==> default: Waiting for domain to get an IP address...
+
+```
+
+libvirt uses dnsmasq program (DNS and DHCP server) which is automatically configured and started by libvirt for each virtual network switch.
+
+Other actions follows including replacing insecure key-pairs and executing plugin hooks.
+
+
 ## Vagrant in Fedora
 
-### Vagrant in Fedora 22
+### Vagrant in Fedora 22, 21
 
 Vagrant has been submitted as a Fedora 22 feature together with *vagrant-libvirt* plugin.
 As Vagrant is already built for Fedora 22 in the official repositories it is enough to run:
@@ -285,8 +358,7 @@ As Vagrant is already built for Fedora 22 in the official repositories it is eno
 
 to install Vagrant with libvirt support. libvirt is the new default provider in Fedora builds.
 
-We would like to introduce a new **@vagrant** group in Fedora that should install all packaged
-plugins.
+I would like to introduce a new **@vagrant** group in Fedora as well.
 
 ### Older Fedoras and RHEL
 
@@ -309,7 +381,9 @@ If you would like to use *libvirt* provider with the upstream package, you need 
 ```shell
 vagrant plugin install vagrant-libvirt
 ```
-## Vagrant files in detail
+
+## Demo: Vagrant files in detail
+
 Vagrant files:
 ```shell
 git clone git@github.com:strzibny/vagrant-presentation.git 
@@ -327,6 +401,6 @@ vagrant ssh
 ## Attributions
 
 - This presentation @ Josef Stříbný, Tomáš Hrčka
-- Vagrant logos and artwork @ HashiCorp
+- Vagrant logos and artwork @ HashiCorp, Inc.
 - Fedora, libvirt logos @ Red Hat, Inc.
 - Puppet logo @ Puppet Labs
