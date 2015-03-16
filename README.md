@@ -284,7 +284,7 @@ vagrant box add fedora21 fedora-21.box
 or:
 
 ```
-vagrant box add rhel6 http://file.rdu.redhat.com/~jshubin/vagrant/rhel-6.5/rhel-6.5.box
+vagrant box add fedora21 http://file.rdu.redhat.com/~jshubin/vagrant/fedora-21/fedora-21.box
 ```
 
 Either action will add boxes in `.vagrant.d/boxes`:

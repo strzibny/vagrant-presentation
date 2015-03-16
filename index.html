@@ -278,10 +278,61 @@ $ vagrant box add name.box --name mybox
 					</ul>
 				</section>
 
+        <section>
+          <section>
+					  <h2>Getting started</h2>
+					  <p>Let's get a box first and add it:</p>
+					  <pre><code data-trim contenteditable>
+$ vagrant box add fedora21 http://file.rdu.redhat.com/~jshubin/vagrant/fedora-21/fedora-21.box
+					  </code></pre>
+
+					  <p>This will add boxes in <strong>.vagrant.d/boxes:</strong></p>
+					  <pre><code data-trim contenteditable>
+$ ls .vagrant.d/boxes
+fedora21/
+$ vagrant box list
+fedora21 (libvirt, 0)
+					  </code></pre>
+            <p>Create a new Vagrantfile:</p>
+					  <pre><code data-trim contenteditable>
+$ vagrant init fedora21
+					  </code></pre>
+           </section>
+
+           <section>
+					  <h2>$ vagrant up</h2>
+					  <pre><code data-trim contenteditable>
+$ vagrant up
+==> default: Uploading base box image as volume into libvirt storage...
+==> default: Creating image (snapshot of base box volume).
+
+$ sudo ls /var/lib/libvirt/images
+fedora21_vagrant_box_image.img
+
+==> default: Creating domain with the following settings...
+..
+==> default:  -- Image:             /var/lib/libvirt/images/user_default.img
+					  </code></pre>
+
+					  <p><strong>user</strong> is the current directory (/home/user) and<br><strong>default</strong> is the name of libvirt pool.</p>
+					  <pre><code data-trim contenteditable>
+==> default: Starting domain.
+==> default: Waiting for domain to get an IP address...
+					  </code></pre>
+            <p>libvirt uses dnsmasq program (DNS and DHCP server) which is automatically configured for each virtual network switch.</p>
+          </section>
+          <section>
+					  <h2>Running boxes</h2>
+					  <pre><code data-trim contenteditable>
+$ vagrant global-status
+					  </code></pre>
+           </section>
+				</section>
+
 				<section>
 					<h1>Vagrant in Fedora</h1>
 					<p>
-						<strong>vagrant</strong> and <strong>vagrant-libvirt</strong> for Fedora 22
+						<strong>vagrant</strong> and <strong>vagrant-libvirt</strong> for Fedora 22, 21
 					</p>
 					<img src="img/libvirt.png" width="auto">
 					<pre><code data-trim contenteditable>
@@ -303,19 +354,18 @@ $ vagrant box add name.box --name mybox
 					</ul>
 				</section>
 				<section>
-                                        <h1>Vagrant files in detail</h1>
+           <h1>Vagrant files in detail</h1>
 <pre><code data-trim contenteditable>
 $ git clone git@github.com:strzibny/vagrant-presentation.git
-                                        </code></pre>
-
-                                        <pre><code data-trim contenteditable>
+</code></pre>
+<pre><code data-trim contenteditable>
 $ vagrant box add humaton/fedora-21-cloud 
 $ vagrant up humaton/fedora-21-cloud --provider libvirt
 $ vagrant ssh
-                                        </code></pre>
-                                </section>
+</code></pre>
+        </section>
  				<section>
-                                        <h1>Questions?</h1>
+           <h1>Questions?</h1>
 				</section>		
 			</div>
 
