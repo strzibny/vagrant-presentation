@@ -291,7 +291,7 @@ Either action will add boxes in `.vagrant.d/boxes`:
 
 ```
 $ ls .vagrant.d/boxes
-fedora21/
+fedora21/ rhel6/
 ```
 
 To check:
@@ -331,7 +331,7 @@ fedora21_vagrant_box_image.img
 ==> default:  -- Image:             /var/lib/libvirt/images/user_default.img
 ```
 
-`user` is the current directory (/home/user) and `default` is the name of the VM,
+`user` is the current directory (/home/user) and `default` is the name of libvirt pool,
 `.img` file is renamed image from the `.box` file.
 
 ```
