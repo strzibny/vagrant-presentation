@@ -331,7 +331,7 @@ fedora21_vagrant_box_image.img
 ==> default:  -- Image:             /var/lib/libvirt/images/user_default.img
 ```
 
-`user` is the current directory (/home/user) and `default` in the name of libvirt pool,
+`user` is the current directory (/home/user) and `default` is the name of libvirt pool,
 `.img` file is renamed image from the `.box` file.
 
 ```
@@ -344,6 +344,10 @@ libvirt uses dnsmasq program (DNS and DHCP server) which is automatically config
 
 Other actions follows including replacing insecure key-pairs and executing plugin hooks.
 
+To see all our running VMs and containers:
+```
+$ vagrant global-status
+```
 
 ## Vagrant in Fedora
 
@@ -379,7 +383,7 @@ If you would like to use *libvirt* provider with the upstream package, you need 
 *vagrant-libvirt* plugin with:
 
 ```shell
-vagrant plugin install vagrant-libvirt
+$ vagrant plugin install vagrant-libvirt
 ```
 
 ## Demo: Vagrant files in detail
