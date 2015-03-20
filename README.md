@@ -388,10 +388,12 @@ $ vagrant plugin install vagrant-libvirt
 
 ## Demo: Vagrant files in detail
 
-Vagrant files:
+To run this presentation in Vagrant:
+
 ```shell
 git clone git@github.com:strzibny/vagrant-presentation.git 
 ```
+
 Unofficial Fedora Cloud box:
 https://atlas.hashicorp.com/humaton/boxes/fedora-21-cloud
 
@@ -400,6 +402,9 @@ vagrant box add humaton/fedora-21-cloud
 vagrant up humaton/fedora-21-cloud --provider libvirt
 vagrant ssh
 ```
+
+Please see demo/ folder for some examples. The Rails multi-machine
+demo can be found at [github.com/strzibny/vagrant-demo-rails-postgresql-passenger](https://github.com/strzibny/vagrant-demo-rails-postgresql-passenger).
 
 
 ## Attributions
