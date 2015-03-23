@@ -386,7 +386,7 @@ $ vagrant plugin install vagrant-libvirt
 
 New demos for this tech talk:
 
-- [github.com/strzibny/vagrant-demo-rails-postgresql-passenger](https://github.com/strzibny/vagrant-demo-rails-postgresql-passenger).
+- [github.com/strzibny/vagrant-demo-rails-postgresql-passenger](https://github.com/strzibny/vagrant-demo-rails-postgresql-passenger)
 - [github.com/strzibny/vagrant-docker-examples](https://github.com/strzibny/vagrant-docker-examples)
 
 Please see demo/ folder for some more examples.
