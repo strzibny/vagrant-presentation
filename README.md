@@ -18,13 +18,9 @@ though.*
   - GitHub: [@strzibny](https://www.github.com/strzibny)
   - Twitter: [@strzibnyj](https://www.twitter.com/strzibnyj)
   - Blog: [Notes to self](https://nts.strzibny.name)
-- Tomáš Hrčka
-  - GitHub: [@humaton](https://www.github.com/humaton)
 
-We are part of Red Hat Developer Experience team. Josef does mostly
-Ruby and RubyGems packaging for Fedora and RHEL, and started to
-maintain Vagrant in Fedora. We were both involved in getting Vagrant
-into Fedora and are co-authors of *vagrant-registration* plugin.
+Josef does mostly Ruby and RubyGems packaging for Fedora and RHEL,
+and started to maintain Vagrant in Fedora.
 
 ## Agenda
 
@@ -386,30 +382,18 @@ If you would like to use *libvirt* provider with the upstream package, you need 
 $ vagrant plugin install vagrant-libvirt
 ```
 
-## Demo: Vagrant files in detail
+## Demo
 
-To run this presentation in Vagrant:
+New demos for this tech talk:
 
-```shell
-git clone git@github.com:strzibny/vagrant-presentation.git 
-```
+- [github.com/strzibny/vagrant-demo-rails-postgresql-passenger](https://github.com/strzibny/vagrant-demo-rails-postgresql-passenger).
+- [github.com/strzibny/vagrant-docker-examples](https://github.com/strzibny/vagrant-docker-examples)
 
-Unofficial Fedora Cloud box:
-https://atlas.hashicorp.com/humaton/boxes/fedora-21-cloud
-
-```shell
-vagrant box add humaton/fedora-21-cloud
-vagrant up humaton/fedora-21-cloud --provider libvirt
-vagrant ssh
-```
-
-Please see demo/ folder for some examples. The Rails multi-machine
-demo can be found at [github.com/strzibny/vagrant-demo-rails-postgresql-passenger](https://github.com/strzibny/vagrant-demo-rails-postgresql-passenger).
-
+Please see demo/ folder for some more examples.
 
 ## Attributions
 
-- This presentation @ Josef Stříbný, Tomáš Hrčka
+- This presentation @ Josef Stříbný
 - Vagrant logos and artwork @ HashiCorp, Inc.
 - Fedora, libvirt logos @ Red Hat, Inc.
 - Puppet logo @ Puppet Labs

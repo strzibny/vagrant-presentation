@@ -51,9 +51,11 @@
 					<div style="float:left;margin-left:5%;margin-right:2%;width:40%;background:url(img/strzibny.jpg) no-repeat;height:400px">
 						<div style="margin-top:302px;background:white;opacity: 0.9;"><span style="background:white;opacity: 0.9;">Josef Stříbný<br>@strzibny</span></div>
 					</div>
+<!--
 					<div style="float:left;width:40%;background:url(img/humaton.jpg) no-repeat;height:400px">
 						<div style="margin-top:302px;background:white;opacity: 0.9;"><span style="background:white;opacity: 0.9;">Tomáš Hrčka<br>@humaton</span></div>
-					</div>
+					</div> 
+-->
 					<div style="clear:both; color: #333333;margin-left:10%;margin-right:10%;">
 						<img style="border:0;padding-top:0px;float:left;padding-left:0%;" src="img/redhat.jpg" />
 						<div style="float:left;padding-top:13px;padding-left:15px;">Red Hat Developer Experience</div>
@@ -354,15 +356,11 @@ $ vagrant global-status
 					</ul>
 				</section>
 				<section>
-           <h1>Vagrant files in detail</h1>
-<pre><code data-trim contenteditable>
-$ git clone git@github.com:strzibny/vagrant-presentation.git
-</code></pre>
-<pre><code data-trim contenteditable>
-$ vagrant box add humaton/fedora-21-cloud 
-$ vagrant up humaton/fedora-21-cloud --provider libvirt
-$ vagrant ssh
-</code></pre>
+           <h1>Demo</h1>
+                <ul>
+<li>Rails, PostgreSQL, Passenger multi-machine libvirt demo
+<li>Docker as a provider (MongoDB), Docker as a provisioner (Adminer)
+</ul>
         </section>
  				<section>
            <h1>Questions?</h1>
